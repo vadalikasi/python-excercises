@@ -51,14 +51,34 @@ BLASTOFF!
 
 '''
 
-# Write your code here:
 
+# Write your code here:
+def evens_up_to(max_num):
+    value = 2
+    while value <= max_num:
+        yield value
+        value += 2
+
+
+def squares_up_to(max_num):
+    value = 1
+    while value ** 2 <= max_num:
+        yield value ** 2
+        value += 1
+
+
+def countdown(num):
+    while num >= 1:
+        yield num
+        num -= 1
+    yield "BLASTOFF!"
 
 
 # Do not edit any code below this line!
 
 if __name__ == '__main__':
     import doctest
+
     count, _ = doctest.testmod()
     if count == 0:
         print('*** ALL TESTS PASS ***\nGive someone a HIGH FIVE!')

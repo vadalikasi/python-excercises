@@ -44,19 +44,6 @@ Going to x=8, y=33, z=-4
 '''
 
 # Write your code here:
-def product(a,b,c):
-    return a*b*c
-def total(u,v,w):
-    return u+v+w
-def max_even(*args):
-    max_even=0
-    for i in args:
-        if i%2==0 and max_even < i:
-            max_even=i
-    return max_even
-            
-def set_destination(x,y,z):
-    print("Going to x={}, y={}, z={}".format(x,y,z))
 
 
 
@@ -69,4 +56,3 @@ if __name__ == '__main__':
         print('*** ALL TESTS PASS ***\nGive someone a HIGH FIVE!')
 
 # Copyright 2015-2018 Aaron Maxwell. All rights reserved.
-

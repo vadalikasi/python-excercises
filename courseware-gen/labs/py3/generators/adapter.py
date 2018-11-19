@@ -154,7 +154,9 @@ StopIteration
 '''
 
 from os.path import dirname, join
+
 this_directory = dirname(__file__)
+
 
 def fullpath(filename):
     '''Returns the full path of a file in this directory. Allows you to
@@ -162,14 +164,38 @@ def fullpath(filename):
     '''
     return join(this_directory, filename)
 
-# Write your code here:
 
+# Write your code here:
+def words_in_text(file_name):
+    with open(file_name) as fp:
+        for line in fp:
+            for word in line.split():
+                yield word.lower().strip('.,!')
+
+
+def book_records(file_path):
+    with open(file_path) as handle:
+        # houses={}
+        data = {}
+        for line in handle:
+            if line == '\n':
+                yield data
+                data = {}
+            else:
+                attr, value = line.strip('\n').split(':', 1)
+                if attr == 'price':
+                    value = float(value.lstrip(' '))
+                else:
+                    value=value.lstrip(' ')
+                data[attr] = value
+    yield data
 
 
 # Do not edit any code below this line!
 
 if __name__ == '__main__':
     import doctest
+
     count, _ = doctest.testmod()
     if count == 0:
         print('*** ALL TESTS PASS ***\nGive someone a HIGH FIVE!')

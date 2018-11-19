@@ -72,15 +72,7 @@ CALLING: h 3 2 31
 # HINT: While not necessary, it may help to use the collections module.
 
 # Write your code here:
-def memoize(func):
-    cache={}
-    def wrapper(*args):
-        if len(cache)==2:
-            cache.__delitem__(list(cache)[0])
-        if args not in cache:
-            cache[args]=func(*args)
-        return cache[args]
-    return wrapper
+
 
 
 # Do not edit any code below this line!
@@ -107,4 +99,3 @@ if __name__ == '__main__':
         print('*** ALL TESTS PASS ***\nGive someone a HIGH FIVE!')
 
 # Copyright 2015-2018 Aaron Maxwell. All rights reserved.
-

@@ -30,22 +30,14 @@ Pro tips:
 
 '''
 
-
 # Write your code here:
 
-def hello(msg):
-    return 'Hello, ' + msg + '!'
-
-
-def print_hello(msg):
-    print("Hello, {}!".format(msg))
 
 
 # Do not edit any code below this line!
 
 if __name__ == '__main__':
     import doctest
-
     count, _ = doctest.testmod()
     if count == 0:
         print('*** ALL TESTS PASS ***\nGive someone a HIGH FIVE!')
